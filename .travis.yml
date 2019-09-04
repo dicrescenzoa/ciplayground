@@ -14,6 +14,7 @@ deploy:
   app: "ciplayground"
   env: "ciplayground-env"
   bucket_name: "elasticbeanstalk-eu-west-1-060625785112"
-  access_key_id: $AWS_ ACCESS_KEY
+  access_key_id:
+    secure: $AWS_ACCESS_KEY
   secret_access_key:
     secure: $AWS_SECRET_KEY

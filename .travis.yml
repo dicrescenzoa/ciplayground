@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t dicrescenzoa/ciplayground -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true dicrescenzoa/ciplayground npm run test

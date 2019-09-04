@@ -7,3 +7,14 @@ before_install:
 
 script:
   - docker run -e CI=true dicrescenzoa/ciplayground npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "ciplayground"
+  env: "ciplayground-env"
+  bucket_name: "elasticbeanstalk-eu-west-1-060625785112"
+  access_key_id:
+    secure: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: $AWS_SECRET_KEY
